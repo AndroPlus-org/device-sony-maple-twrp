@@ -61,6 +61,9 @@ service sbinqseecomd /sbin/qseecomd
     seclabel u:r:recovery:s0
 
 on boot
+    write /proc/sys/kernel/sched_boost 1
+    write /sys/devices/mdss_dsi_panel/esd_enable_wo_xlog 1
+    
     setprop sys.usb.config adb
     write /sys/class/android_usb/android0/idVendor 0FCE
     write /sys/class/android_usb/android0/idProduct 5${ro.usb.pid_suffix}

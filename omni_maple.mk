@@ -31,7 +31,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.sf.lcd_density=480 \
-    ro.usb.pid_suffix=1F1
+    ro.usb.pid_suffix=1F1 \
+    sys.usb.controller=a800000.dwc3 \
+    sys.usb.rndis.func.name=gsi \
+    sys.usb.rmnet.func.name=gsi
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := maple
